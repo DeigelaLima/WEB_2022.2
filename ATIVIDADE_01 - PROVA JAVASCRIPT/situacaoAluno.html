@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas</title>
+</head>
+<body>
+    
+    <script>
+
+        let np1 = parseFloat(prompt('Informe a primeira nota:'));
+        let np2 = parseFloat(prompt('Informe a segunda nota:'));
+        
+
+        function situacaoAluno(np1, np2) {
+            let media = (np1 + np2)/2;
+
+            if(media >= 7) {
+                alert ("Aprovado com Conceito A");
+            }
+            else if(media < 4) {
+                alert("Reprovado Direto");
+            }
+            else if(media >= 4 && media < 7){
+                 let nfinal = parseFloat(prompt('Nota da final:'));
+                 let novaMedia = (media + nfinal)/2;
+
+                 if(novaMedia >= 5){
+                    alert("Aprovado com Conceito B");
+                 }
+                 else{
+                    alert("Reprovado na Final");
+                 }
+            }
+        }
+        situacaoAluno(np1,np2);
+    </script>
+</body>
+</html>

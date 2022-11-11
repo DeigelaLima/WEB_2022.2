@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h2>Sua nota é:</h2>
+    <p id="notas"></p>
+    
+    <script>
+
+        function situacaoAluno(np1, np2) {
+            let media = (np1 + np2)/2;
+
+            if(media >= 7) {
+                return "Aprovado com Conceito A"; 
+            }
+            else if(media < 4) {
+                return "Reprovado Direto";
+            }
+            else if(media >= 4 && media < 7){
+                 let nfinal = 6;
+                 let novaMedia = (media + nfinal)/2;
+
+                 if(novaMedia >= 5){
+                    return "Aprovado com Conceito B";
+                 }
+                 else{
+                    return "Reprovado na Final";
+                 }
+            }
+        }
+        document.getElementById("notas").innerHTML = situacaoAluno(8,9);
+    </script>
+</body>
+</html>

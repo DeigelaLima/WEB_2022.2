@@ -1,0 +1,114 @@
+QUESTÃO 01
+ANTÔNIA DEIGELA LIMA RUFINO
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC</title>
+</head>
+<body>
+    
+    O IMC é
+    <p id="imc"></p>
+
+    <script>
+        function imc(peso, altura){  
+           return (peso / (altura * altura));
+        }  
+        document.getElementById("imc").innerHTML = imc(90, 1.80).toFixed(2);
+    </script>
+
+</body>
+</html>
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+QUESTÃO 02
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas</title>
+</head>
+<body>
+    
+    <script>
+
+        let np1 = parseFloat(prompt('Informe a primeira nota:'));
+        let np2 = parseFloat(prompt('Informe a segunda nota:'));
+        
+
+        function situacaoAluno(np1, np2) {
+            let media = (np1 + np2)/2;
+
+            if(media >= 7) {
+                alert ("Aprovado com Conceito A");
+            }
+            else if(media < 4) {
+                alert("Reprovado Direto");
+            }
+            else if(media >= 4 && media < 7){
+                 let nfinal = parseFloat(prompt('Nota da final:'));
+                 let novaMedia = (media + nfinal)/2;
+
+                 if(novaMedia >= 5){
+                    alert("Aprovado com Conceito B");
+                 }
+                 else{
+                    alert("Reprovado na Final");
+                 }
+            }
+        }
+        situacaoAluno(np1,np2);
+    </script>
+</body>
+</html>
+
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
+QUESTÃO 03
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alunos Reprovados</title>
+</head>
+<body>
+    <h2>JavaScript Arrays</h2>
+
+    <p id="demo"></p>
+
+    <script>
+        const alunos = [
+            {nome: "Leandro", ira:7.5},
+            {nome: "Maria", ira:8.2},
+            {nome: "José", ira:4.5},
+            {nome: "Diana", ira:5.4},
+            {nome: "Bruna",ira:6.7}
+        ];
+
+        function reprovados(alunos){
+            let res = "<ul>"
+                for (let i = 0; i < alunos.length; i++){
+                    if (alunos[i].nome && alunos[i].ira < 7){
+                        res += "<li>" + "Nome: " + alunos[i].nome + ", " + "IRA: " + alunos[i].ira + "</li>";
+                    }
+                }
+                res += "</ul>";
+            return res
+        }
+
+        document.getElementById("demo").innerHTML = reprovados(alunos);
+    </script>
+</body>
+</html>
